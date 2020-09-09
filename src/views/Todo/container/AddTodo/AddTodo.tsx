@@ -9,7 +9,7 @@ interface AddTodoProps {
 const AddTodo:React.FC<AddTodoProps> = (props) => {
 
     const dispatch = useDispatch()
-    const [task , setTask] = useState({} as any)
+    const [task , setTask] = useState<any>({})
 
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
         e.persist();

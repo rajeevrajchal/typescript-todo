@@ -1,7 +1,8 @@
 import React from "react";
 import "./modal.scss";
-import {connect, useDispatch} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import * as actions from "./services/modalAction";
+import { RootState } from "../../store/reducers";
 
 interface ModalProps {
     isOpenModal?: string
@@ -9,8 +10,9 @@ interface ModalProps {
 }
 const Modal:React.FC<ModalProps> = props => {
     const dispatch = useDispatch()
+    const { isOpenModal } = useSelector((state:RootState) => state.modalReducer)
+
     const {
-        isOpenModal,
         children
     } = props;
 
@@ -35,12 +37,4 @@ const Modal:React.FC<ModalProps> = props => {
     );
 };
 
-const mapStateToProps = (state?:any) => {
-    return {
-        isOpenModal: state.modalReducer.isOpenModal
-    };
-};
-
-export default connect(
-    mapStateToProps,
-)(Modal);
+export default connect()(Modal);

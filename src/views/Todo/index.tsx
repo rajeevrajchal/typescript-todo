@@ -4,7 +4,9 @@ import Nav from "./components/Nav";
 import TaskList from "./container/TaskList";
 import Modal from "../../components/Modal";
 import AddTodo from "./container/AddTodo/AddTodo";
-import {connect, useDispatch} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
+import {RootState} from '../../store/reducers'
+
 import * as actions from  '../../store/actions'
 import { IMODE } from '../../components/Modal/services/modalAction'
 
@@ -16,18 +18,15 @@ interface TodoProps {
 
 const Todo: React.FC<TodoProps> = (props) => {
     const dispatch = useDispatch()
-
-    const {
-        mode,
-        tasks
-    } = props
+    const { mode } = useSelector((state:RootState) => state.modalReducer)
+    const { tasks } = useSelector((state:RootState) => state.todoReducer)
 
     useEffect(() => {
         dispatch(actions.getTask())
-    },[])
+    },[dispatch])
 
 
-    const initatModal = () => {
+    const initiateModal = () => {
         const mode = {
             mode:"add_modal"
         }
@@ -48,7 +47,7 @@ const Todo: React.FC<TodoProps> = (props) => {
                                 ))
                             }
                             <div className="task-form d-flex align-center">
-                                <i className="material-icons clickAbleIcon flex-1" onClick={initatModal}>add</i>
+                                <i className="material-icons clickAbleIcon flex-1" onClick={initiateModal}>add</i>
                                 <div className="add-task flex-9">
                                     add task for today
                                 </div>
@@ -66,11 +65,5 @@ const Todo: React.FC<TodoProps> = (props) => {
     );
 };
 
-const mapStateToProps = (state:any) => {
-    return {
-        tasks: state.todoReducer.tasks,
-        mode: state.modalReducer.mode
-    };
-};
 
-export default connect(mapStateToProps)(Todo);
+export default connect()(Todo);
