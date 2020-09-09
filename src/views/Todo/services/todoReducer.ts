@@ -1,11 +1,13 @@
-import * as actionTypes from './todoType'
+import * as actionTypes from "./todoType"
 
-interface TodoState {
-    tasks: any
+export interface TodoState {
+    tasks?: any
+    singleTask?: object
 }
 
 const initialState:TodoState = {
-    tasks:[]
+    tasks:[],
+    singleTask:{}
 }
 
 const todoReducer = (state = initialState, action:any)=> {
@@ -15,9 +17,14 @@ const todoReducer = (state = initialState, action:any)=> {
                 ...state,
                 tasks:action.tasks
             }
+        case actionTypes.EDIT_TASK:
+            return {
+                ...state,
+                singleTask:action.singleTask
+            }
         default:
             return state
     }
 }
 
-export  default todoReducer
+export default todoReducer

@@ -1,0 +1,57 @@
+@import "../../assets/styles/theme";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  background: #F9F9F9;
+  opacity: 0.75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .modal-body{
+    position: relative;
+    border-radius: 10px;
+    background:#FFFFFF;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    box-shadow: 20px 20px 40px rgba(87, 87, 87, 0.3),
+    -5px -5px 30px rgba(152, 152, 152, 0.5);
+    animation:slideUp .3s;
+    .modal-close{
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1vh 2vh;
+    }
+    .modal-close i{
+      cursor: pointer;
+      outline: none;
+    }
+    .modal-elements{
+      flex: 1;
+      padding: 20px;
+    }
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }to{
+     transform: translateY(0%);
+     opacity: 1;
+   }
+}

@@ -1,0 +1,209 @@
+@import "./colors";
+@import "./vars";
+@import "./typography";
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.h-100 {
+  height: 100%
+}
+
+.d-flex, %d-flex {
+  display: flex;
+}
+
+.justify-center, %justify-center {
+  justify-content: center;
+}
+.justify-flexend, %justify-center {
+  justify-content: flex-end;
+}
+
+.align-center, %align-center {
+  align-items: center;
+}
+
+.align-end, %align-end {
+  align-items: flex-end;
+}
+
+.align-start, %align-start {
+  align-items: flex-start;
+}
+
+.justify-end, %justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between, %justify-between {
+  justify-content: space-between;
+}
+
+.justify-around, %justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly, %justify-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-wrap, %flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-content-start, %align-content-start {
+  align-content: flex-start;
+}
+
+.flex-one, %flex-one {
+  flex: 1
+}
+
+.flex-column, %flex-column {
+  flex-direction: column;
+}
+
+.flex-column-reverse, %flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-row-reverse, %flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.d-none {
+  display: none;
+}
+
+.flex-centered, %flex-centered {
+  @extend %d-flex, %justify-center, %align-center;
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.flex-2 {
+  flex: 2
+}
+
+.flex-3 {
+  flex: 3
+}
+
+.flex-3 {
+  flex: 3
+}
+
+.flex-4 {
+  flex: 4
+}
+
+.flex-5 {
+  flex: 5
+}
+
+.flex-6 {
+  flex: 6
+}
+
+.flex-7 {
+  flex: 7
+}
+
+.flex-8 {
+  flex: 8
+}
+
+.flex-9 {
+  flex: 9
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+//image
+%image-cover, .image-cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+//
+.w-100, %w-100 {
+  width: 100%;
+}
+.w-17, %w-17 {
+  width: 17.5%;
+}
+.w-20, %w-20 {
+  width: 20%;
+}
+
+.w-30, %w-30 {
+  width: 30%;
+}
+
+//margins
+.my-10px, %my-10px {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.my-20px, %my-20px {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.wrapper-padding, %wrapper-padding {
+  padding: $padding-val;
+  box-sizing: border-box;
+}
+
+.breaker {
+  position: relative;
+
+  &::before {
+    height: 5px;
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 40px;
+    background: $accent-color;
+  }
+}
+
+.list-title{
+  background: red;
+}
+
+.form-group{
+  .input-box{
+    input, select{
+      border: none;
+      width: 200px;
+      padding: 7px;
+      background: $border-bottom;
+      border-radius: 5px;
+      font-size: 15px;
+      outline: none;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      &::placeholder{
+        color: $light-color;
+        font-size: 15px;
+        text-transform: capitalize;
+      }
+
+    }
+  }
+}

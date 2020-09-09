@@ -1,0 +1,52 @@
+@import "../../assets/styles/theme";
+
+main.todo{
+  height: 100vh;
+  box-sizing: border-box;
+  background: $background-color;
+  .content{
+    flex: 1;
+    padding: 8px 8vw;
+    box-sizing: border-box;
+    .todo-container{
+      margin-top: 32px;
+      box-sizing: border-box;
+      .urgent{
+        border: 1px solid $danger-color;
+      }
+      .task-list{
+        margin-top: 24px;
+        box-sizing: border-box;
+        .task-item{
+          margin-bottom:7px;
+          box-sizing: border-box;
+          .task-complete-check{
+            border: none;
+            input{
+              border: none;
+            }
+          }
+          .task-title{
+            text-transform: capitalize;
+          }
+          .status{
+            background: #4c8d29;
+            &::before{
+              content: " ";
+              width: 10px;
+              height: 10px;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+        .task-form{
+          color:$border-bottom;
+        }
+      }
+    }
+  }
+  .add-todo{
+    box-sizing: border-box;
+  }
+}

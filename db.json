@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "5c5e7dba-4cf3-4cc6-86d2-f0541ddbedc0",
+      "title": "make a note on react",
+      "priority": "normal",
+      "complete": false
+    },
+    {
+      "id": "91cbd8b9-8569-45e8-97d7-6aceb3e67ad9",
+      "title": "make a react todo applications",
+      "priority": "normal",
+      "complete": false
+    },
+    {
+      "id": "da59f512-3980-48b2-b9f7-401e630db660",
+      "title": "change the ui of todo",
+      "priority": "urgent",
+      "complete": false
+    },
+    {
+      "complete": true,
+      "title": "drink water at interval of 15 mins ",
+      "priority": "normal",
+      "id": "7d5949e1-5335-4e8e-904d-cb848b1a6e71"
+    }
+  ]
+}

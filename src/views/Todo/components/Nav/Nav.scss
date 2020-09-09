@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/theme";
+
+nav {
+  box-shadow: $card-shadow;
+  height: 10vh;
+  background: $light-color;
+  box-sizing: border-box;
+  .todo-navbar {
+    padding: 8px 8vw;
+    .logo-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
